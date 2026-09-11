@@ -1,11 +1,5 @@
 /* ==========================================================================
    FS CONCEPT HAIR | Barbearia Premium — Motor de Animações & Interações
-   - Scroll Reveal (Animação ao rolar a página)
-   - Efeito Ripple ao Clicar (Feedback tátil/visual)
-   - Contadores Animados para Estatísticas
-   - Menu Mobile Responsivo & Header com Desfoque
-   - FAQ Accordion com Transição Suave
-   - Filtros de Serviços Interativos
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,24 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           
-          // Se for contador de estatísticas, anima o número
-          const counter = entry.target.querySelector('.count-up');
-          if (counter && !counter.dataset.animated) {
-            animateCounter(counter);
-          }
+          // Anima TODOS os contadores dentro do bloco revelado
+          const counters = entry.target.querySelectorAll('.count-up');
+          counters.forEach(counter => {
+            if (!counter.dataset.animated) {
+              animateCounter(counter);
+            }
+          });
           
-          // Opcional: deixar de observar após animar
           observer.unobserve(entry.target);
         }
       });
     }, {
       threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
   } else {
-    // Fallback para navegadores antigos
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
 
@@ -47,13 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const isDecimal = el.getAttribute('data-decimal') === "true";
     const suffix = el.getAttribute('data-suffix') || '';
     const prefix = el.getAttribute('data-prefix') || '';
-    const duration = 1800; // ms
+    const duration = 1600; // ms
     const startTime = performance.now();
 
     function updateCount(currentTime) {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Easing suave (ease-out-expo)
       const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
       const currentVal = easeProgress * target;
 
@@ -77,11 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(updateCount);
   }
 
-  // ── 3. EFEITO RIPPLE (ONDA AO CLICAR) ──
+  // ── 3. EFEITO RIPPLE AO CLICAR ──
   const rippleElements = document.querySelectorAll('.btn, .filter-btn, .service-card, .faq-question, .info-card');
   rippleElements.forEach(el => {
     el.addEventListener('click', function(e) {
-      // Não interfere em links
       const rect = this.getBoundingClientRect();
       const circle = document.createElement('span');
       const diameter = Math.max(rect.width, rect.height);
