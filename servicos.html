@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardápio de Serviços | FS Concept Hair - Barbearia Premium SJC</title>
+  <meta name="description" content="Confira o catálogo completo de serviços da FS Concept Hair: corte masculino, barba na toalha quente, platinado, luzes e tratamentos químicos no Jd. Paulista em SJC." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="nav scrolled">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="logo.png" alt="Logo FS Concept Hair" class="logo-img" onerror="this.style.display='none'" />
+        <div class="brand-text">
+          <span class="brand-name">FS CONCEPT HAIR</span>
+          <span class="brand-sub">Barbearia Premium</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="servicos.html" class="nav-link active">Serviços</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li><a href="agendamento.html" class="nav-link">Agendamento</a></li>
+          <li><a href="index.html#contato" class="nav-link">Localização</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Agendar Horário
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="servicos.html">Cardápio de Serviços</a></li>
+      <li><a href="sobre.html">A Barbearia & Conceito</a></li>
+      <li><a href="agendamento.html">Como Agendar</a></li>
+      <li><a href="index.html#contato">Localização & Contato</a></li>
+      <li style="margin-top: 10px;">
+        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="text-align: center;">
+          Agendar no AppBarber
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- BANNER DA PÁGINA -->
+  <div style="padding: 150px 0 60px; background: linear-gradient(180deg, rgba(201, 162, 79, 0.08) 0%, var(--bg-dark) 100%); text-align: center;">
+    <div class="container">
+      <span class="section-tag">Tabela Completa & Transparência</span>
+      <h1 class="section-title" style="font-size: 3rem;">Cardápio de Serviços</h1>
+      <div class="section-divider"></div>
+      <p class="section-subtitle" style="max-width: 650px; margin: 0 auto;">
+        Descubra todos os nossos procedimentos para barba, cabelo e química masculina com atendimento individualizado e horário marcado.
+      </p>
+    </div>
+  </div>
+
+  <!-- CATÁLOGO COMPLETO COM FILTROS -->
+  <section class="services-section" style="padding-top: 20px;">
+    <div class="container">
+      <div class="services-filter">
+        <button class="filter-btn active" data-filter="all">Todos os Procedimentos</button>
+        <button class="filter-btn" data-filter="cabelo">Cortes de Cabelo</button>
+        <button class="filter-btn" data-filter="barba">Barba & Barbaterapia</button>
+        <button class="filter-btn" data-filter="combo">Combos Especiais</button>
+        <button class="filter-btn" data-filter="quimica">Química & Coloração</button>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. CORTE MASCULINO -->
+        <div class="service-card" data-category="cabelo">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Corte Masculino</h3>
+              <div class="service-price">R$ 40</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 45 min</span>
+              <span>💈 Tesoura / Máquina</span>
+            </div>
+            <p class="service-desc">
+              Corte clássico ou contemporâneo com análise de visagismo facial, lavatório com xampu refrescante e finalização com pomada matte de alta fixação.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar no AppBarber
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. BARBA TRADICIONAL -->
+        <div class="service-card" data-category="barba">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Barba Tradicional</h3>
+              <div class="service-price">R$ 30</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 35 min</span>
+              <span>♨️ Toalha Quente</span>
+            </div>
+            <p class="service-desc">
+              Desenho simétrico, barboterapia com vapor térmico ou toalha quente, navalhete descartável e pós-barba anti-irritação.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Barba
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. COMBO CORTE + BARBA -->
+        <div class="service-card featured" data-category="combo">
+          <div class="service-badge">Combo Especial</div>
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Corte + Barba (Combo)</h3>
+              <div class="service-price">R$ 70</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 1h 15 min</span>
+              <span>⭐ Completo</span>
+            </div>
+            <p class="service-desc">
+              Nossa experiência mais recomendada: corte completo + alinhamento de barba com barboterapia e acabamentos de precisão milimétrica.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Combo
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. LUZES MASCULINAS -->
+        <div class="service-card" data-category="quimica">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Luzes Masculinas</h3>
+              <div class="service-price">R$ 50</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 1h 00 min</span>
+              <span>✨ Iluminação</span>
+            </div>
+            <p class="service-desc">
+              Mechas claras aplicadas com touca de silicone ou papel, criando contraste sutil ou evidente conforme o gosto do cliente.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Luzes
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. PLATINADO MASCULINO -->
+        <div class="service-card" data-category="quimica">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Platinado Masculino</h3>
+              <div class="service-price">R$ 120</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 2h 00 min</span>
+              <span>❄️ Loiro Global</span>
+            </div>
+            <p class="service-desc">
+              Descoloração profissional com protetores Plex contra quebra e matização refinada para um platinado homogêneo e sedoso.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Platinado
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. TRATAMENTO QUÍMICO -->
+        <div class="service-card" data-category="quimica">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Tratamento Químico</h3>
+              <div class="service-price">R$ 60</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 1h 00 min</span>
+              <span>🌿 Reconstrução</span>
+            </div>
+            <p class="service-desc">
+              Procedimento capilar para restauração de massa proteica, hidratação de alta performance e blindagem dos fios.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Tratamento
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. ALISAMENTO CAPILAR -->
+        <div class="service-card" data-category="quimica">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Alisamento Capilar</h3>
+              <div class="service-price">R$ 20</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 45 min</span>
+              <span>💨 Alinhamento</span>
+            </div>
+            <p class="service-desc">
+              Redução do frizz e controle do volume para fios ondulados e crespos que buscam caimento natural e facilidade no penteado diário.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Alisamento
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. ACABAMENTO / PEZINHO -->
+        <div class="service-card" data-category="cabelo">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Acabamento / Pezinho</h3>
+              <div class="service-price">R$ 10</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 15 min</span>
+              <span>📐 Manutenção</span>
+            </div>
+            <p class="service-desc">
+              Limpeza milimétrica de nuca, costeletas e contornos para prolongar a vida útil do corte entre um atendimento e outro.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Acabamento
+            </a>
+          </div>
+        </div>
+
+        <!-- 9. CORTE COM MÁQUINA -->
+        <div class="service-card" data-category="cabelo">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Corte com Máquina</h3>
+              <div class="service-price">R$ 25</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 30 min</span>
+              <span>⚡ Praticidade</span>
+            </div>
+            <p class="service-desc">
+              Corte uniforme e veloz com 1 ou 2 pentes de máquina em todo o cabelo, ideal para quem valoriza praticidade e visual limpo.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Máquina
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 12px;">
+            <img src="logo.png" alt="Logo FS Concept Hair" class="logo-img" onerror="this.style.display='none'" />
+            <div class="brand-text">
+              <span class="brand-name">FS CONCEPT HAIR</span>
+              <span class="brand-sub">Barbearia Premium</span>
+            </div>
+          </a>
+          <p>
+            Cortes masculinos de alto nível, barba na toalha quente e tratamentos capilares especializados no Jardim Paulista, São José dos Campos – SP.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="servicos.html">Cardápio de Serviços</a></li>
+            <li><a href="sobre.html">Sobre a Barbearia</a></li>
+            <li><a href="agendamento.html">Como Agendar</a></li>
+            <li><a href="index.html#contato">Localização</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="servicos.html">Corte Masculino</a></li>
+            <li><a href="servicos.html">Barba Tradicional</a></li>
+            <li><a href="servicos.html">Combo Corte + Barba</a></li>
+            <li><a href="servicos.html">Platinado & Luzes</a></li>
+            <li><a href="servicos.html">Tratamento Químico</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Atendimento</h4>
+          <ul>
+            <li style="color: var(--text);">Av. Santos Dumont, 180 - Jd. Paulista</li>
+            <li style="color: var(--text);">São José dos Campos - SP</li>
+            <li style="color: var(--gold); font-weight: 600;">(12) 99750-2402</li>
+            <li style="color: var(--text-dim);">Seg a Sex: 09h às 19h | Sáb: 08h às 17h</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 <strong>FS Concept Hair</strong>. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5512997502402?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20servi%C3%A7os." 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     title="Fale conosco no WhatsApp"
+     aria-label="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 32 32">
+      <path d="M16 2.5C8.544 2.5 2.5 8.544 2.5 16c0 2.656.772 5.131 2.1 7.225L3 30l7.05-1.559A13.43 13.43 0 0 0 16 29.5c7.456 0 13.5-6.044 13.5-13.5S23.456 2.5 16 2.5zm0 24.647c-2.316 0-4.475-.716-6.262-1.938l-.447-.306-4.631 1.025 1.047-4.512-.338-.491A11.127 11.127 0 0 1 4.853 16c0-6.147 5-11.147 11.147-11.147s11.147 5 11.147 11.147-5 11.147-11.147 11.147zm6.116-8.353c-.334-.169-1.981-.978-2.288-1.091-.306-.112-.531-.169-.756.169-.225.338-.869 1.091-1.066 1.316-.197.225-.394.253-.728.084-2.025-.997-3.35-1.781-4.684-4.069-.35-.6.35-.556 1-1.856.112-.225.056-.422-.028-.591-.084-.169-.756-1.822-1.038-2.494-.275-.653-.556-.566-.756-.575-.194-.009-.422-.009-.647-.009s-.591.084-.9.422c-.309.338-1.181 1.153-1.181 2.812 0 1.659 1.209 3.262 1.378 3.488.169.225 2.378 3.631 5.762 5.094 2.181.944 3.031.966 4.106.806.719-.106 1.981-.809 2.262-1.591.281-.781.281-1.45.197-1.591-.084-.141-.309-.225-.644-.394z"/>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

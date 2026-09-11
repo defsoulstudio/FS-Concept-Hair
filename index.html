@@ -4,31 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FS Concept Hair | Barbearia Premium em São José dos Campos - SP</title>
-  <meta name="description" content="Barbearia premium em São José dos Campos. Cortes modernos, barba tradicional, química e cuidados masculinos de alto padrão no Jardim Paulista. Agende seu horário." />
+  <meta name="description" content="Barbearia premium em São José dos Campos no Jardim Paulista. Cortes modernos, barba com toalha quente, química e visagismo masculino de alto padrão. Agende seu horário." />
   <meta name="keywords" content="barbearia são josé dos campos, corte masculino sjc, barba tradicional, barbearia jardim paulista, fs concept hair" />
   <meta name="geo.region" content="BR-SP" />
   <meta name="geo.placename" content="São José dos Campos" />
-  <meta name="geo.position" content="-23.1896;-45.8841" />
-  <meta name="ICBM" content="-23.1896, -45.8841" />
 
-  <!-- Open Graph / Redes Sociais -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="FS Concept Hair | Barbearia Premium em São José dos Campos" />
-  <meta property="og:description" content="Excelência em cada detalhe. Cortes clássicos e modernos, barba alinhada e tratamentos capilares masculinos de alto nível." />
-  <meta property="og:url" content="https://sites.appbarber.com.br/fsconcepthair-b2eq" />
-  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="FS Concept Hair | Barbearia Premium" />
+  <meta property="og:description" content="Excelência em cada detalhe. Cortes clássicos e modernos, barba alinhada e tratamentos capilares masculinos de alto nível no Jardim Paulista." />
+  <meta property="og:image" content="logo.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Schema.org para SEO Local (Google) -->
+  <!-- Estilo Global -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BarberShop",
     "name": "FS Concept Hair",
+    "image": "logo.png",
     "telephone": "+5512997502402",
     "url": "https://sites.appbarber.com.br/fsconcepthair-b2eq",
     "address": {
@@ -38,1021 +39,419 @@
       "addressRegion": "SP",
       "postalCode": "12215-651",
       "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -23.1896,
-      "longitude": -45.8841
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "19:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "08:00",
-        "closes": "17:00"
-      }
-    ],
-    "priceRange": "$$"
+    }
   }
   </script>
-
-  <style>
-    :root {
-      --bg: #070707;
-      --bg-surface: #0e0e0e;
-      --bg-card: #141414;
-      --bg-card-hover: #1b1915;
-      --gold-light: #e6c875;
-      --gold: #c9a24f;
-      --gold-dark: #8c6d29;
-      --gold-border: rgba(201, 162, 79, 0.25);
-      --gold-glow: rgba(201, 162, 79, 0.15);
-      --text: #f7f3eb;
-      --text-muted: #a69f92;
-      --text-dim: #736d62;
-      --whatsapp: #25d366;
-      --whatsapp-hover: #1eb956;
-      --font-display: 'Cinzel', serif;
-      --font-accent: 'Cormorant Garamond', serif;
-      --font-body: 'Jost', sans-serif;
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: var(--font-display);
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--text);
-    }
-
-    .gold-gradient {
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .section-tag {
-      display: inline-block;
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin-bottom: 1rem;
-      font-family: var(--font-accent);
-      font-weight: 600;
-    }
-
-    .section-divider {
-      width: 50px;
-      height: 2px;
-      background: var(--gold);
-      margin: 0 auto 3rem;
-      opacity: 0.6;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(7, 7, 7, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: 1000;
-      border-bottom: 1px solid rgba(201, 162, 79, 0.15);
-      transition: var(--transition);
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.1rem 0;
-    }
-
-    .logo-container {
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-    }
-
-    .logo-main {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      color: var(--text);
-    }
-
-    .logo-sub {
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-top: -3px;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-light);
-    }
-
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    /* Botões */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
-      padding: 0.85rem 1.8rem;
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
-      color: #070707;
-      border: 1px solid var(--gold);
-      box-shadow: 0 4px 20px var(--gold-glow);
-    }
-
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(201, 162, 79, 0.35);
-      background: linear-gradient(135deg, #f5da8e 0%, var(--gold-light) 100%);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--gold-border);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-      background: rgba(201, 162, 79, 0.05);
-      transform: translateY(-2px);
-    }
-
-    .btn-whatsapp {
-      background: var(--whatsapp);
-      color: #fff;
-      border: 1px solid var(--whatsapp);
-    }
-
-    .btn-whatsapp:hover {
-      background: var(--whatsapp-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-    }
-
-    .mobile-menu-toggle {
-      display: none;
-      background: transparent;
-      border: none;
-      color: var(--text);
-      font-size: 1.6rem;
-      cursor: pointer;
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 8rem 1rem 5rem;
-      background: radial-gradient(circle at center, #171511 0%, #070707 80%);
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: 
-        radial-gradient(var(--gold-border) 1px, transparent 1px),
-        radial-gradient(rgba(201, 162, 79, 0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-      background-position: 0 0, 20px 20px;
-      opacity: 0.4;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      max-width: 820px;
-      z-index: 2;
-    }
-
-    .hero-subtitle-top {
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
-      line-height: 1.15;
-      margin-bottom: 1.5rem;
-      font-family: var(--font-display);
-      font-weight: 800;
-    }
-
-    .hero-desc {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.2rem;
-      margin-bottom: 3.5rem;
-    }
-
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      border-top: 1px solid var(--gold-border);
-      padding-top: 2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .highlight-item h3 {
-      font-size: 1.5rem;
-      color: var(--gold);
-      margin-bottom: 0.2rem;
-    }
-
-    .highlight-item p {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    /* Serviços */
-    .services-section {
-      padding: 6rem 0;
-      background: var(--bg-surface);
-      position: relative;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.8rem;
-      margin-top: 2rem;
-    }
-
-    .service-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(201, 162, 79, 0.15);
-      padding: 2.2rem 1.8rem;
-      border-radius: 4px;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0;
-      transition: var(--transition);
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--gold-border);
-      background: var(--bg-card-hover);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .service-card:hover::before {
-      opacity: 1;
-    }
-
-    .service-card-top {
-      margin-bottom: 1.5rem;
-    }
-
-    .service-title {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.8rem;
-      color: var(--text);
-    }
-
-    .service-desc {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .service-card-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px dashed rgba(201, 162, 79, 0.2);
-      padding-top: 1.2rem;
-      margin-top: 1rem;
-    }
-
-    .service-price {
-      font-family: var(--font-display);
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--gold);
-    }
-
-    .service-price span {
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      font-family: var(--font-body);
-      font-weight: 400;
-    }
-
-    .service-btn {
-      padding: 0.5rem 1rem;
-      font-size: 0.75rem;
-    }
-
-    /* Sobre / Conceito */
-    .about-section {
-      padding: 6rem 0;
-      background: var(--bg);
-      border-top: 1px solid rgba(201, 162, 79, 0.1);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .about-text h2 {
-      font-family: var(--font-accent);
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .about-text p {
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .perks-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
-
-    .perk-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-
-    .perk-icon {
-      color: var(--gold);
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    .perk-info h4 {
-      font-size: 0.95rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .perk-info p {
-      font-size: 0.85rem;
-      color: var(--text-dim);
-      margin-bottom: 0;
-    }
-
-    .experience-card {
-      background: linear-gradient(145deg, #161411 0%, #0d0c0b 100%);
-      border: 1px solid var(--gold-border);
-      padding: 3rem 2.5rem;
-      border-radius: 4px;
-      text-align: center;
-      position: relative;
-    }
-
-    .experience-card::after {
-      content: '';
-      position: absolute;
-      inset: 8px;
-      border: 1px solid rgba(201, 162, 79, 0.15);
-      pointer-events: none;
-    }
-
-    .experience-logo {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      letter-spacing: 0.2em;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    .experience-quote {
-      font-family: var(--font-accent);
-      font-style: italic;
-      font-size: 1.3rem;
-      color: var(--text);
-      margin-bottom: 2rem;
-    }
-
-    /* Localização */
-    .location-section {
-      padding: 6rem 0;
-      background: var(--bg-surface);
-      border-top: 1px solid rgba(201, 162, 79, 0.1);
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .info-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(201, 162, 79, 0.15);
-      padding: 2.5rem 2rem;
-      border-radius: 4px;
-      text-align: center;
-    }
-
-    .info-icon {
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
-    }
-
-    .info-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .info-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hours-table {
-      width: 100%;
-      margin: 1.2rem 0;
-      border-collapse: collapse;
-      text-align: left;
-      font-size: 0.9rem;
-    }
-
-    .hours-table tr {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .hours-table td {
-      padding: 0.6rem 0;
-      color: var(--text-muted);
-    }
-
-    .hours-table td:last-child {
-      text-align: right;
-      color: var(--gold-light);
-      font-weight: 500;
-    }
-
-    /* Rodapé */
-    footer {
-      background: #040404;
-      border-top: 1px solid rgba(201, 162, 79, 0.15);
-      padding: 4rem 0 2rem;
-      text-align: center;
-    }
-
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      letter-spacing: 0.2em;
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1.8rem 0;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: var(--gold);
-    }
-
-    .copyright {
-      color: var(--text-dim);
-      font-size: 0.8rem;
-      margin-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 1.5rem;
-    }
-
-    /* WhatsApp Flutuante */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: var(--whatsapp);
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-      z-index: 9999;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.08);
-      background: var(--whatsapp-hover);
-      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-    }
-
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: currentColor;
-    }
-
-    /* Responsividade */
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta .btn-gold {
-        display: none;
-      }
-
-      .mobile-menu-toggle {
-        display: block;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .hero-highlights {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .perks-list {
-        grid-template-columns: 1fr;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 68px;
-      left: 0;
-      right: 0;
-      background: #0b0b0b;
-      border-bottom: 1px solid var(--gold-border);
-      padding: 1.5rem;
-      flex-direction: column;
-      gap: 1.2rem;
-      text-align: center;
-      z-index: 999;
-    }
-
-    .mobile-nav.active {
-      display: flex;
-    }
-
-    .mobile-nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container navbar">
-      <a href="#home" class="logo-container">
-        <span class="logo-main">FS CONCEPT HAIR</span>
-        <span class="logo-sub">Barbearia Premium</span>
+  <!-- HEADER / NAVEGAÇÃO -->
+  <header class="nav">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="logo.png" alt="Logo FS Concept Hair" class="logo-img" onerror="this.style.display='none'" />
+        <div class="brand-text">
+          <span class="brand-name">FS CONCEPT HAIR</span>
+          <span class="brand-sub">Barbearia Premium</span>
+        </div>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#home">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#sobre">O Conceito</a></li>
-        <li><a href="#contato">Localização</a></li>
-      </ul>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Início</a></li>
+          <li><a href="servicos.html" class="nav-link">Serviços</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li><a href="agendamento.html" class="nav-link">Agendamento</a></li>
+          <li><a href="#contato" class="nav-link">Localização</a></li>
+        </ul>
+      </nav>
 
-      <div class="nav-cta">
-        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-          Agendar Online
+      <div class="nav-actions">
+        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Agendar Horário
         </a>
-        <button class="mobile-menu-toggle" id="menuBtn" aria-label="Abrir menu">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
-    </div>
-
-    <!-- Dropdown Mobile -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#home" onclick="toggleMenu()">Início</a>
-      <a href="#servicos" onclick="toggleMenu()">Serviços</a>
-      <a href="#sobre" onclick="toggleMenu()">O Conceito</a>
-      <a href="#contato" onclick="toggleMenu()">Localização</a>
-      <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="margin-top: 10px;">
-        Agendar Horário
-      </a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <div class="hero-subtitle-top">São José dos Campos • Jardim Paulista</div>
-      <h1 class="hero-title">Excelência em Cada Detalhe.</h1>
-      <p class="hero-desc">
-        A união da precisão artesanal da cutelaria clássica com as técnicas modernas de visagismo e cuidados masculinos.
-      </p>
-
-      <div class="hero-actions">
-        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-gold">
-          Agendar Horário Online
+  <!-- MENU MOBILE GAVETA -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="servicos.html">Cardápio de Serviços</a></li>
+      <li><a href="sobre.html">A Barbearia & Conceito</a></li>
+      <li><a href="agendamento.html">Como Agendar</a></li>
+      <li><a href="#contato">Localização & Contato</a></li>
+      <li style="margin-top: 10px;">
+        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="text-align: center;">
+          Agendar via AppBarber
         </a>
-        <a href="https://wa.me/5512997502402?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20FS%20Concept%20Hair." target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-          Falar no WhatsApp
+      </li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION (FACHADA PRESERVADA) -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span>⭐ Barbearia de Alto Padrão em São José dos Campos</span>
+      </div>
+      <h1 class="hero-title">Excelência em Cada Detalhe.</h1>
+      <p class="hero-description">
+        Mais que um corte ou uma barba alinhada: um ambiente exclusivo com atendimento pontual, produtos de linha premium e técnica refinada no coração do Jardim Paulista.
+      </p>
+      <div class="hero-actions">
+        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Agendar no AppBarber
+        </a>
+        <a href="servicos.html" class="btn btn-outline">
+          Conhecer Serviços
         </a>
       </div>
 
       <div class="hero-highlights">
         <div class="highlight-item">
-          <h3>AppBarber</h3>
-          <p>Agendamento 24h</p>
+          <div class="highlight-title">AppBarber</div>
+          <div class="highlight-desc">Agendamento Online 24/7</div>
         </div>
         <div class="highlight-item">
-          <h3>Premium</h3>
-          <p>Produtos Selecionados</p>
+          <div class="highlight-title">Cuidado Premium</div>
+          <div class="highlight-desc">Toalha Quente & Visagismo</div>
         </div>
         <div class="highlight-item">
-          <h3>Jd. Paulista</h3>
-          <p>Fácil Acesso em SJC</p>
+          <div class="highlight-title">Jardim Paulista</div>
+          <div class="highlight-desc">Fácil Acesso & Estilo</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção de Serviços -->
+  <!-- CARDÁPIO DE SERVIÇOS EM DESTAQUE -->
   <section class="services-section" id="servicos">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Nossos Serviços</span>
         <h2 class="section-title">Cardápio de Serviços</h2>
         <div class="section-divider"></div>
+        <p class="section-subtitle">Técnicas contemporâneas e clássicas executadas com rigor e precisão.</p>
       </div>
 
       <div class="services-grid">
-        <!-- 1. Corte Masculino -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <h3 class="service-title">Corte Masculino</h3>
-            <p class="service-desc">Corte clássico ou moderno, com técnica e acabamento preciso.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 40 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-outline service-btn">Agendar</a>
-          </div>
-        </div>
-
-        <!-- 2. Barba Tradicional -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <h3 class="service-title">Barba Tradicional</h3>
-            <p class="service-desc">Modelagem, navalha e acabamento para uma barba alinhada.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 30 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-outline service-btn">Agendar</a>
-          </div>
-        </div>
-
-        <!-- 3. Corte + Barba -->
-        <div class="service-card" style="border-color: rgba(201, 162, 79, 0.4);">
-          <div class="service-card-top">
-            <h3 class="service-title" style="color: var(--gold-light);">Corte + Barba (Combo)</h3>
-            <p class="service-desc">Combo completo para um visual impecável e alinhamento total.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 70 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-gold service-btn">Agendar</a>
-          </div>
-        </div>
-
-        <!-- 4. Luzes Masculinas -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <h3 class="service-title">Luzes Masculinas</h3>
-            <p class="service-desc">Iluminação capilar para um visual marcante, moderno e limpo.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 50 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-outline service-btn">Agendar</a>
-          </div>
-        </div>
-
-        <!-- 5. Platinado Masculino -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <h3 class="service-title">Platinado Masculino</h3>
-            <p class="service-desc">Transformação de impacto com resultado claro e estiloso.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 120 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-outline service-btn">Agendar</a>
-          </div>
-        </div>
-
-        <!-- 6. Tratamento Químico -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <h3 class="service-title">Tratamento Químico</h3>
-            <p class="service-desc">Procedimento capilar para textura, forma e finalização.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 60 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-outline service-btn">Agendar</a>
-          </div>
-        </div>
-
-        <!-- 7. Alisamento Capilar -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <h3 class="service-title">Alisamento Capilar</h3>
-            <p class="service-desc">Fios mais alinhados, controle e aparência bem cuidada.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 20 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-outline service-btn">Agendar</a>
-          </div>
-        </div>
-
-        <!-- 8. Acabamento / Pezinho -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <h3 class="service-title">Acabamento / Pezinho</h3>
-            <p class="service-desc">Contorno limpo para manter o corte alinhado por mais tempo.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 10 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-outline service-btn">Agendar</a>
-          </div>
-        </div>
-
-        <!-- 9. Corte com Máquina -->
-        <div class="service-card">
-          <div class="service-card-top">
-            <h3 class="service-title">Corte com Máquina</h3>
-            <p class="service-desc">Corte prático e limpo, feito com máquina e sem degradê.</p>
-          </div>
-          <div class="service-card-bottom">
-            <div class="service-price">R$ 25 <span>/ sessão</span></div>
-            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-outline service-btn">Agendar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção Sobre / O Conceito -->
-  <section class="about-section" id="sobre">
-    <div class="container about-grid">
-      <div class="about-text">
-        <span class="section-tag">O Conceito</span>
-        <h2>Mais que um corte, uma experiência de cuidado pessoal.</h2>
-        <p>
-          Na <strong>FS Concept Hair</strong>, cada cliente recebe um atendimento individualizado. Valorizamos o estilo próprio de cada pessoa, combinando técnicas avançadas de corte e barba com produtos de qualidade premium.
-        </p>
-        <p>
-          Ambiente climatizado, atendimento pontual e a comodidade de agendar seu horário diretamente pelo celular, sem filas ou esperas desnecessárias.
-        </p>
-
-        <div class="perks-list">
-          <div class="perk-item">
-            <div class="perk-icon">✦</div>
-            <div class="perk-info">
-              <h4>Atendimento Pontual</h4>
-              <p>Respeito rigoroso ao seu tempo e agenda.</p>
+        <!-- 1. CORTE MASCULINO -->
+        <div class="service-card" data-category="cabelo">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Corte Masculino</h3>
+              <div class="service-price">R$ 40</div>
             </div>
-          </div>
-          <div class="perk-item">
-            <div class="perk-icon">✦</div>
-            <div class="perk-info">
-              <h4>Produtos Premium</h4>
-              <p>Linha profissional de finalização e barba.</p>
+            <div class="service-meta">
+              <span>⏱️ 45 min</span>
+              <span>💈 Tesoura & Máquina</span>
             </div>
+            <p class="service-desc">
+              Corte clássico ou moderno (degradê, fade, militar, social) com consultoria de estilo, lavagem e finalização com pomada premium.
+            </p>
           </div>
-          <div class="perk-item">
-            <div class="perk-icon">✦</div>
-            <div class="perk-info">
-              <h4>Ambiente Exclusivo</h4>
-              <p>Espaço confortável no Jardim Paulista.</p>
-            </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Horário
+            </a>
           </div>
-          <div class="perk-item">
-            <div class="perk-icon">✦</div>
-            <div class="perk-info">
-              <h4>Agendamento Ágil</h4>
-              <p>Reserve pelo app ou WhatsApp em 1 minuto.</p>
+        </div>
+
+        <!-- 2. COMBO CORTE + BARBA (DESTAQUE) -->
+        <div class="service-card featured" data-category="combo">
+          <div class="service-badge">Mais Pedido</div>
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Corte + Barba (Combo)</h3>
+              <div class="service-price">R$ 70</div>
             </div>
+            <div class="service-meta">
+              <span>⏱️ 1h 15 min</span>
+              <span>⭐ Experiência Completa</span>
+            </div>
+            <p class="service-desc">
+              Combo completo para alinhamento total de visual. Inclui corte personalizado, barboterapia com toalha quente, óleos especiais e acabamento de alta precisão.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Combo
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. BARBA TRADICIONAL -->
+        <div class="service-card" data-category="barba">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Barba Tradicional</h3>
+              <div class="service-price">R$ 30</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 35 min</span>
+              <span>♨️ Toalha Quente</span>
+            </div>
+            <p class="service-desc">
+              Modelagem e desenho preciso da barba, aplicação de toalha quente aromática, navalhete descartável e hidratação com loção refrescante.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Barba
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. PLATINADO MASCULINO -->
+        <div class="service-card" data-category="quimica">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Platinado Masculino</h3>
+              <div class="service-price">R$ 120</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 2h 00 min</span>
+              <span>❄️ Tom Perfeito</span>
+            </div>
+            <p class="service-desc">
+              Transformação de alto impacto. Descoloração progressiva com proteção para o couro cabeludo e tonalização no tom exato (acinzentado ou branco neve).
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Platinado
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. LUZES MASCULINAS -->
+        <div class="service-card" data-category="quimica">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Luzes Masculinas</h3>
+              <div class="service-price">R$ 50</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 1h 00 min</span>
+              <span>✨ Iluminação</span>
+            </div>
+            <p class="service-desc">
+              Pontos de luz estrategicamente distribuídos nos fios para um visual jovem, iluminado e moderno com tonalização equilibrada.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Luzes
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. TRATAMENTO QUÍMICO -->
+        <div class="service-card" data-category="quimica">
+          <div>
+            <div class="service-header">
+              <h3 class="service-name">Tratamento Químico</h3>
+              <div class="service-price">R$ 60</div>
+            </div>
+            <div class="service-meta">
+              <span>⏱️ 1h 00 min</span>
+              <span>🌿 Recuperação</span>
+            </div>
+            <p class="service-desc">
+              Nutrição profunda e reestruturação da fibra capilar para fios ressecados ou submetidos a química, devolvendo maciez e brilho natural.
+            </p>
+          </div>
+          <div class="service-card-footer">
+            <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary service-btn">
+              Agendar Tratamento
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="experience-card">
-        <div class="experience-logo">FS</div>
-        <p class="experience-quote">
-          "A precisão do acabamento reflete a sua postura e confiança."
-        </p>
-        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="width: 100%;">
-          Reservar Meu Horário
+      <div style="text-align: center; margin-top: 50px;">
+        <a href="servicos.html" class="btn btn-outline" style="padding: 14px 36px;">
+          Ver Todos os Serviços & Preços Detalhados →
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Seção Localização & Contato -->
+  <!-- SOBRE / EXPERIÊNCIA FS CONCEPT -->
+  <section class="about-section" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-experience-box">
+          <div class="about-monogram">FS</div>
+          <div class="about-box-tag">Concept Hair | Jd. Paulista</div>
+          <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 24px;">
+            Criada para elevar o padrão do autocuidado masculino em São José dos Campos. Um refúgio onde o homem moderno desacelera e renova sua confiança.
+          </p>
+          <div class="about-box-stats">
+            <div>
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Pontualidade</div>
+            </div>
+            <div>
+              <div class="stat-num">5.0★</div>
+              <div class="stat-label">Avaliações</div>
+            </div>
+            <div>
+              <div class="stat-num">+2k</div>
+              <div class="stat-label">Clientes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-tag">O Nosso Padrão</span>
+          <h2>Mais que um corte, uma experiência de estilo e bem-estar.</h2>
+          <p>
+            Na <strong>FS Concept Hair</strong>, entendemos que o visual de um homem é o seu cartão de visitas. Por isso, abandonamos o modelo tradicional de barbearia apressada e ruidosa.
+          </p>
+          <p>
+            Aqui você encontra atendimento exclusivo com horário marcado pelo <strong>AppBarber</strong>, evitando filas e esperas desnecessárias, com café quente, cerveja artesanal e um ambiente climatizado no Jardim Paulista.
+          </p>
+
+          <div class="about-features">
+            <div class="feature-card">
+              <div class="feature-icon">⏰</div>
+              <h4 class="feature-title">Atendimento Pontual</h4>
+              <p class="feature-desc">Respeito rigoroso ao seu tempo com horários marcados.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h4 class="feature-title">Higiene Absoluta</h4>
+              <p class="feature-desc">Lâminas descartáveis e toalhas esterilizadas a cada cliente.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">☕</div>
+              <h4 class="feature-title">Café & Cerveja</h4>
+              <p class="feature-desc">Bebidas de boas-vindas para tornar seu momento agradável.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📱</div>
+              <h4 class="feature-title">Agendamento Fácil</h4>
+              <p class="feature-desc">Escolha seu barbeiro e serviço em segundos no celular.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS DE CLIENTES -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Depoimentos Reais</span>
+        <h2 class="section-title">O Que Dizem Nossos Clientes</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Confira a avaliação de quem já vive a experiência FS Concept Hair em SJC.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "Melhor barbearia de São José dos Campos! O atendimento com hora marcada pelo AppBarber é extremamente pontual. O corte na tesoura e a barba na toalha quente são diferenciados."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RD</div>
+            <div>
+              <div class="author-name">Rodrigo Dantas</div>
+              <div class="author-sub">Cliente Frequente • SJC</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "Ambiente impecável, super acolhedor e com profissionais que realmente entendem de visagismo. Fiz o combo corte e barba e o resultado superou minhas expectativas. Recomendo de olhos fechados!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ML</div>
+            <div>
+              <div class="author-name">Mateus Lima</div>
+              <div class="author-sub">Cliente • Jd. Paulista</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "Platinado de primeira qualidade! Não ardeu nada no couro e o tom ficou branquinho como eu queria. Além disso, o café expresso é ótimo. Virei cliente fiel."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">GA</div>
+            <div>
+              <div class="author-name">Gabriel Araújo</div>
+              <div class="author-sub">Cliente • São José dos Campos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO & FUNCIONAMENTO -->
   <section class="location-section" id="contato">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Onde Estamos</span>
         <h2 class="section-title">Localização & Funcionamento</h2>
         <div class="section-divider"></div>
+        <p class="section-subtitle">Fácil acesso no Jardim Paulista com estacionamento conveniente.</p>
       </div>
 
-      <div class="info-grid">
+      <div class="location-grid">
         <!-- Endereço -->
         <div class="info-card">
           <div class="info-icon">📍</div>
           <h3>Nosso Endereço</h3>
-          <p>Av. Santos Dumont, 180</p>
-          <p>Jardim Paulista — São José dos Campos – SP</p>
-          <p>CEP: 12215-651</p>
-          <div style="margin-top: 1.5rem;">
-            <a href="https://share.google/LEgf1CN40aiH2Aqm8" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">
-              Abrir no Google Maps
+          <p style="color: var(--cream); font-weight: 500; margin-bottom: 6px;">Av. Santos Dumont, 180</p>
+          <p style="color: var(--text);">Jardim Paulista — São José dos Campos – SP</p>
+          <p style="color: var(--text-dim); font-size: 0.85rem; margin-top: 4px;">CEP: 12215-651</p>
+          <div style="margin-top: 24px;">
+            <a href="https://maps.google.com/?q=Av.+Santos+Dumont,+180,+Jardim+Paulista,+São+José+dos+Campos" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.78rem; padding: 10px 18px;">
+              Traçar Rota no Google Maps
             </a>
           </div>
         </div>
 
-        <!-- Horários de Funcionamento -->
+        <!-- Horários -->
         <div class="info-card">
           <div class="info-icon">🕒</div>
-          <h3>Horários</h3>
+          <h3>Horários de Atendimento</h3>
           <table class="hours-table">
             <tr>
               <td>Segunda a Sexta</td>
-              <td>09h às 19h</td>
+              <td style="color: var(--gold); font-weight: 600;">09h às 19h</td>
             </tr>
             <tr>
               <td>Sábado</td>
-              <td>08h às 17h</td>
+              <td style="color: var(--gold); font-weight: 600;">08h às 17h</td>
             </tr>
             <tr>
               <td>Domingo</td>
               <td style="color: var(--text-dim);">Fechado</td>
             </tr>
           </table>
-          <p style="font-size: 0.85rem; color: var(--gold); margin-top: 0.5rem;">
-            Atendimento com hora marcada via AppBarber.
+          <p style="font-size: 0.82rem; color: var(--gold-light); margin-top: 10px;">
+            ⚡ Atendimento com hora marcada via AppBarber.
           </p>
         </div>
 
@@ -1060,14 +459,18 @@
         <div class="info-card">
           <div class="info-icon">💬</div>
           <h3>Contato & Redes</h3>
-          <p>WhatsApp: <strong>(12) 99750-2402</strong></p>
-          <p style="margin-bottom: 1.5rem;">Acompanhe nossos trabalhos no Instagram:</p>
-          <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-            <a href="https://www.instagram.com/fs_concepthair" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">
-              @fs_concepthair
+          <p style="color: var(--cream); font-weight: 600; font-size: 1.1rem; margin-bottom: 8px;">
+            (12) 99750-2402
+          </p>
+          <p style="color: var(--text); font-size: 0.88rem; margin-bottom: 20px;">
+            Instagram oficial: <strong>@fs_concepthair</strong>
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="https://wa.me/5512997502402?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20FS%20Concept%20Hair." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="font-size: 0.8rem; padding: 10px 16px;">
+              Falar no WhatsApp
             </a>
-            <a href="https://wa.me/5512997502402?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20a%20FS%20Concept%20Hair." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="font-size: 0.75rem; padding: 0.6rem 1.2rem;">
-              Chamar no WhatsApp
+            <a href="https://www.instagram.com/fs_concepthair" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="font-size: 0.8rem; padding: 10px 16px;">
+              Seguir no Instagram
             </a>
           </div>
         </div>
@@ -1075,29 +478,150 @@
     </div>
   </section>
 
-  <!-- Rodapé -->
-  <footer>
+  <!-- FAQ / PERGUNTAS FREQUENTES -->
+  <section class="faq-section">
     <div class="container">
-      <div class="footer-logo gold-gradient">FS CONCEPT HAIR</div>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">Barbearia Premium • São José dos Campos – SP</p>
-
-      <div class="footer-links">
-        <a href="#home">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">O Conceito</a>
-        <a href="#contato">Localização</a>
-        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer">AppBarber</a>
-        <a href="https://www.instagram.com/fs_concepthair" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <div class="section-header">
+        <span class="section-tag">Tire suas dúvidas</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Tudo o que você precisa saber para sua visita.</p>
       </div>
 
-      <p class="copyright">
-        © 2026 FS Concept Hair. Todos os direitos reservados.
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Preciso agendar com antecedência?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Sim, recomendamos fortemente o agendamento prévio através do nosso aplicativo AppBarber ou WhatsApp. Dessa forma garantimos atendimento 100% pontual sem filas ou espera.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Quais são as formas de pagamento aceitas?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Aceitamos Pix, cartões de crédito e débito de todas as principais bandeiras, além de dinheiro em espécie.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Como funciona a barboterapia com toalha quente?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              A toalha quente com óleos essenciais amolece os folículos e dilata os poros, permitindo que a navalha deslize suavemente sem irritar a pele. O procedimento é finalizado com toalha fria e bálsamo hidratante.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Posso desmarcar ou reagendar meu horário?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Sim! Você pode reagendar diretamente pelo link do AppBarber ou enviando uma mensagem no nosso WhatsApp com pelo menos 2 horas de antecedência.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <span class="section-tag">Seu Novo Estilo Começa Aqui</span>
+      <h2>Pronto para Transformar seu Visual?</h2>
+      <p>
+        Escolha o melhor dia e horário na nossa agenda online e venha viver a experiência premium da FS Concept Hair.
       </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="https://sites.appbarber.com.br/fsconcepthair-b2eq" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 16px 36px; font-size: 0.95rem;">
+          Agendar no AppBarber
+        </a>
+        <a href="https://wa.me/5512997502402?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20FS%20Concept%20Hair." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 16px 36px; font-size: 0.95rem;">
+          Agendar via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 12px;">
+            <img src="logo.png" alt="Logo FS Concept Hair" class="logo-img" onerror="this.style.display='none'" />
+            <div class="brand-text">
+              <span class="brand-name">FS CONCEPT HAIR</span>
+              <span class="brand-sub">Barbearia Premium</span>
+            </div>
+          </a>
+          <p>
+            Cortes masculinos de alto nível, barba na toalha quente e tratamentos capilares especializados no Jardim Paulista, São José dos Campos – SP.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="servicos.html">Cardápio de Serviços</a></li>
+            <li><a href="sobre.html">Sobre a Barbearia</a></li>
+            <li><a href="agendamento.html">Como Agendar</a></li>
+            <li><a href="#contato">Localização</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="servicos.html">Corte Masculino</a></li>
+            <li><a href="servicos.html">Barba Tradicional</a></li>
+            <li><a href="servicos.html">Combo Corte + Barba</a></li>
+            <li><a href="servicos.html">Platinado & Luzes</a></li>
+            <li><a href="servicos.html">Tratamento Químico</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Atendimento</h4>
+          <ul>
+            <li style="color: var(--text);">Av. Santos Dumont, 180 - Jd. Paulista</li>
+            <li style="color: var(--text);">São José dos Campos - SP</li>
+            <li style="color: var(--gold); font-weight: 600;">(12) 99750-2402</li>
+            <li style="color: var(--text-dim);">Seg a Sex: 09h às 19h | Sáb: 08h às 17h</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>FS Concept Hair</strong>. Todos os direitos reservados.
+        </div>
+        <div>
+          Desenvolvido com excelência visual e tecnologia web de ponta.
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Botão Flutuante do WhatsApp -->
-  <a href="https://wa.me/5512997502402?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20FS%20Concept%20Hair%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." 
+  <!-- BOTÃO FLUTUANTE WHATSAPP -->
+  <a href="https://wa.me/5512997502402?text=Ol%C3%A1!%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida%20ou%20agendar%20um%20hor%C3%A1rio." 
      class="whatsapp-float" 
      target="_blank" 
      rel="noopener noreferrer" 
@@ -1108,18 +632,7 @@
     </svg>
   </a>
 
-  <!-- Script do Menu Mobile -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-
-    menuBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('active');
-    });
-
-    function toggleMenu() {
-      mobileNav.classList.remove('active');
-    }
-  </script>
+  <!-- Script Principal -->
+  <script src="script.js"></script>
 </body>
 </html>
