@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FS CONCEPT HAIR | Barbearia Premium — Estilo Global & Alto Impacto
+   FS CONCEPT HAIR | Barbearia Premium — Identidade Visual Completa & Animações
    Paleta: Preto Nobre, Dourado Metálico e Tons Creme
    Tipografia: Cinzel, Cormorant Garamond e Jost
    ========================================================================== */
@@ -8,14 +8,14 @@
   --black: #050505;
   --bg-dark: #0a0a0d;
   --bg-card: #121217;
-  --bg-card-hover: #171720;
+  --bg-card-hover: #181822;
   --border: #23232b;
   --border-gold: rgba(201, 162, 79, 0.3);
-  --border-gold-hover: rgba(201, 162, 79, 0.7);
+  --border-gold-hover: rgba(201, 162, 79, 0.75);
   --gold: #c9a24f;
   --gold-light: #e6c87f;
   --gold-dark: #987832;
-  --gold-glow: rgba(201, 162, 79, 0.18);
+  --gold-glow: rgba(201, 162, 79, 0.22);
   --cream: #f5ede0;
   --white: #ffffff;
   --text: #a4a4b0;
@@ -26,12 +26,12 @@
   --whatsapp-hover: #1ebd5a;
   --radius: 8px;
   --radius-lg: 14px;
-  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --font-serif: 'Cinzel', serif;
   --font-display: 'Cormorant Garamond', serif;
   --font-sans: 'Jost', sans-serif;
-  --shadow-card: 0 12px 35px rgba(0, 0, 0, 0.6);
-  --shadow-gold: 0 6px 25px rgba(201, 162, 79, 0.25);
+  --shadow-card: 0 14px 40px rgba(0, 0, 0, 0.65);
+  --shadow-gold: 0 6px 30px rgba(201, 162, 79, 0.3);
 }
 
 *, *::before, *::after {
@@ -74,6 +74,60 @@ img {
   padding: 0 24px;
 }
 
+/* ── ANIMAÇÕES DE SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal.reveal-scale {
+  transform: scale(0.92);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+
+/* ── EFEITO RIPPLE (ONDA AO CLICAR) ── */
+.btn, .filter-btn, .service-card, .faq-question, .info-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: rippleAnimation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes rippleAnimation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
 /* ── ÍCONES SVG METÁLICOS ── */
 .icon-svg {
   display: inline-block;
@@ -100,7 +154,7 @@ img {
   color: var(--gold);
 }
 
-/* ── BOTÕES PREMIUM ── */
+/* ── BOTÕES PREMIUM COM BRILHO NO HOVER ── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -117,6 +171,29 @@ img {
   transition: var(--transition);
   border: 1px solid transparent;
   white-space: nowrap;
+  user-select: none;
+}
+
+/* Efeito de feixe de luz passando no botão ao passar o mouse */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-25deg);
+  transition: none;
+}
+
+.btn:hover::after {
+  left: 140%;
+  transition: left 0.75s ease-in-out;
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .btn-primary {
@@ -128,7 +205,7 @@ img {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(201, 162, 79, 0.5);
+  box-shadow: 0 8px 30px rgba(201, 162, 79, 0.55);
   background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
   color: #000;
 }
@@ -142,9 +219,10 @@ img {
 
 .btn-outline:hover {
   border-color: var(--gold);
-  background: rgba(201, 162, 79, 0.12);
+  background: rgba(201, 162, 79, 0.15);
   color: var(--white);
   transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(201, 162, 79, 0.25);
 }
 
 .btn-whatsapp {
@@ -178,7 +256,7 @@ img {
 .nav.scrolled {
   padding: 12px 0;
   background: rgba(5, 5, 5, 0.98);
-  border-bottom: 1px solid rgba(201, 162, 79, 0.4);
+  border-bottom: 1px solid rgba(201, 162, 79, 0.45);
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
 }
 
@@ -249,7 +327,8 @@ img {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
   background: var(--gold);
@@ -316,8 +395,8 @@ img {
 }
 
 /* ==========================================================================
-   HERO SECTION — REINVENTADA COM ALTO IMPACTO VISUAL
-   Preservando a Fachada e a Logo com Iluminação e Profundidade de Lounge
+   HERO SECTION — ALTO IMPACTO & ESSÊNCIA VISUAL DE BARBEARIA
+   Preservando Fachada e Logo com Elementos Emblemáticos e Animações
    ========================================================================== */
 .hero {
   position: relative;
@@ -325,23 +404,22 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 150px 24px 90px;
+  padding: 140px 24px 80px;
   overflow: hidden;
   background: #050505;
 }
 
-/* Fundo da Fachada com iluminação de cinema e fallback de alto impacto */
+/* Fachada preservada no fundo com blend mode dark luxury */
 .hero-bg {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Camadas: Iluminação radial dourada + textura elegante + imagem da fachada */
   background-image: 
     radial-gradient(circle at 50% 35%, rgba(201, 162, 79, 0.22) 0%, rgba(5, 5, 5, 0.94) 80%),
-    linear-gradient(rgba(201, 162, 79, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201, 162, 79, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(201, 162, 79, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 162, 79, 0.035) 1px, transparent 1px),
     url("fachada.jpg"), 
     url("frente.jpg"), 
     url("assets/fachada.jpg");
@@ -359,21 +437,20 @@ img {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(5, 5, 5, 0.8) 70%, #050505 100%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(5, 5, 5, 0.75) 60%, #050505 100%);
   z-index: 2;
   pointer-events: none;
 }
 
-/* Feixes de luz ambiente dourada */
 .hero-glow-accent {
   position: absolute;
   top: 15%;
   left: 50%;
   transform: translateX(-50%);
-  width: 600px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(201, 162, 79, 0.18) 0%, transparent 70%);
-  filter: blur(80px);
+  width: 650px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(201, 162, 79, 0.22) 0%, transparent 70%);
+  filter: blur(90px);
   z-index: 2;
   pointer-events: none;
 }
@@ -381,13 +458,26 @@ img {
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 920px;
-  text-align: center;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Badge nobre superior */
-.hero-badge {
+/* Grid de duas colunas: Informação & Vitrine da Barbearia */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Coluna Esquerda */
+.hero-text-col {
+  text-align: left;
+}
+
+/* Emblema Heráldico de Barbearia no Topo */
+.barber-crest-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -399,13 +489,13 @@ img {
   letter-spacing: 2.8px;
   text-transform: uppercase;
   color: var(--gold-light);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 12px rgba(201, 162, 79, 0.1);
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: 3.6rem;
+  font-size: 3.4rem;
   line-height: 1.12;
   font-weight: 700;
   color: var(--cream);
@@ -415,20 +505,19 @@ img {
 }
 
 .hero-description {
-  font-size: 1.18rem;
+  font-size: 1.12rem;
   color: var(--text-light);
-  max-width: 720px;
-  margin: 0 auto 38px;
+  max-width: 580px;
+  margin-bottom: 34px;
   font-weight: 300;
   line-height: 1.7;
 }
 
 .hero-actions {
   display: flex;
-  justify-content: center;
-  gap: 18px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 
 .hero-btn-primary {
@@ -438,12 +527,185 @@ img {
 }
 
 .hero-btn-outline {
-  padding: 16px 32px;
+  padding: 16px 30px;
   font-size: 0.9rem;
   letter-spacing: 2px;
 }
 
-/* ── TRUST BAR / CARD FLUTUANTE DE EXPERIÊNCIA DO HERO ── */
+/* Indicador de Disponibilidade ao Vivo */
+.live-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 0 10px #25D366;
+  animation: pulseLive 2s infinite;
+}
+
+@keyframes pulseLive {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Coluna Direita: Vitrine Visual da Barbearia */
+.hero-showcase-col {
+  display: flex;
+  justify-content: center;
+}
+
+.barber-showcase-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(18, 18, 23, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+  transition: var(--transition);
+}
+
+.barber-showcase-card:hover {
+  border-color: var(--border-gold-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(201, 162, 79, 0.2);
+}
+
+.showcase-header {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.barber-tools-emblem {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(201, 162, 79, 0.12);
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  box-shadow: 0 0 20px rgba(201, 162, 79, 0.25);
+  transition: transform 0.4s ease;
+}
+
+.barber-showcase-card:hover .barber-tools-emblem {
+  transform: scale(1.1) rotate(8deg);
+}
+
+.showcase-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--cream);
+  letter-spacing: 2px;
+}
+
+.showcase-subtitle {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+/* Faixa Animada com Padrão de Barbearia */
+.barber-pole-strip {
+  width: 100%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--gold) 0,
+    var(--gold) 10px,
+    #111115 10px,
+    #111115 18px,
+    #ffffff 18px,
+    #ffffff 28px,
+    #111115 28px,
+    #111115 36px
+  );
+  background-size: 200% 200%;
+  animation: barberPoleAnim 12s linear infinite;
+  border-radius: 3px;
+  margin: 16px 0;
+  opacity: 0.8;
+}
+
+@keyframes barberPoleAnim {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+.showcase-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.showcase-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: var(--transition);
+}
+
+.showcase-item:hover {
+  background: rgba(201, 162, 79, 0.08);
+  border-color: rgba(201, 162, 79, 0.3);
+  transform: translateX(4px);
+}
+
+.showcase-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(201, 162, 79, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.showcase-text strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--cream);
+  line-height: 1.2;
+}
+
+.showcase-text span {
+  font-size: 0.78rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.showcase-cta {
+  width: 100%;
+  padding: 13px;
+  font-size: 0.82rem;
+  letter-spacing: 1.8px;
+}
+
+/* ── TRUST BAR / PAINEL DE PILARES INFERIOR DO HERO ── */
 .hero-trust-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -451,11 +713,11 @@ img {
   background: rgba(18, 18, 23, 0.75);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 22px 20px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .trust-item {
@@ -465,6 +727,11 @@ img {
   text-align: center;
   padding: 6px 12px;
   position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.trust-item:hover {
+  transform: translateY(-4px);
 }
 
 .trust-item:not(:last-child)::after {
@@ -478,8 +745,8 @@ img {
 }
 
 .trust-icon-box {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: rgba(201, 162, 79, 0.1);
   border: 1px solid rgba(201, 162, 79, 0.3);
@@ -487,11 +754,18 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.trust-item:hover .trust-icon-box {
+  transform: scale(1.15) rotate(6deg);
+  border-color: var(--gold);
+  background: rgba(201, 162, 79, 0.22);
 }
 
 .trust-title {
   font-family: var(--font-serif);
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--cream);
   font-weight: 600;
   margin-bottom: 3px;
@@ -543,7 +817,7 @@ img {
 }
 
 /* ==========================================================================
-   SEÇÃO DE SERVIÇOS / CARDÁPIO — COM CORREÇÃO TOTAL DO OVERLAP
+   SEÇÃO DE SERVIÇOS / CARDÁPIO — SEM EMOJIS & COM HOVER VIVO
    ========================================================================== */
 .services-section {
   padding: 110px 0;
@@ -576,7 +850,7 @@ img {
   background: var(--gold-glow);
   border-color: var(--gold);
   color: var(--gold-light);
-  box-shadow: 0 4px 15px rgba(201, 162, 79, 0.2);
+  box-shadow: 0 4px 18px rgba(201, 162, 79, 0.25);
 }
 
 .services-grid {
@@ -585,7 +859,6 @@ img {
   gap: 28px;
 }
 
-/* Card de serviço com arquitetura vertical à prova de colisões */
 .service-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -600,19 +873,18 @@ img {
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px) scale(1.01);
   border-color: var(--border-gold-hover);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(201, 162, 79, 0.2);
   background: var(--bg-card-hover);
 }
 
 .service-card.featured {
   border-color: var(--gold);
   background: linear-gradient(180deg, rgba(201, 162, 79, 0.1) 0%, var(--bg-card) 100%);
-  box-shadow: 0 8px 30px rgba(201, 162, 79, 0.15);
+  box-shadow: 0 8px 30px rgba(201, 162, 79, 0.18);
 }
 
-/* Barra superior de tag para evitar colisão com o preço */
 .service-tag-bar {
   min-height: 28px;
   margin-bottom: 14px;
@@ -634,6 +906,12 @@ img {
   padding: 4px 12px;
   border-radius: 50px;
   box-shadow: 0 2px 10px rgba(201, 162, 79, 0.35);
+  animation: badgePulse 3s infinite ease-in-out;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 2px 10px rgba(201, 162, 79, 0.35); }
+  50% { box-shadow: 0 4px 18px rgba(201, 162, 79, 0.6); }
 }
 
 .service-category-tag {
@@ -669,6 +947,12 @@ img {
   font-weight: 700;
   white-space: nowrap;
   text-shadow: 0 2px 12px rgba(201, 162, 79, 0.25);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.service-card:hover .service-price {
+  transform: scale(1.06);
+  text-shadow: 0 0 16px rgba(201, 162, 79, 0.6);
 }
 
 .service-meta {
@@ -731,6 +1015,12 @@ img {
   padding: 48px 36px;
   text-align: center;
   box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.about-experience-box:hover {
+  border-color: var(--border-gold-hover);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(201, 162, 79, 0.15);
 }
 
 .about-monogram {
@@ -760,7 +1050,7 @@ img {
 
 .stat-num {
   font-family: var(--font-serif);
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   color: var(--gold-light);
   font-weight: 700;
 }
@@ -803,7 +1093,8 @@ img {
 
 .feature-card:hover {
   border-color: var(--gold);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .feature-icon-box {
@@ -816,6 +1107,13 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-box {
+  transform: scale(1.15) rotate(6deg);
+  background: rgba(201, 162, 79, 0.2);
+  border-color: var(--gold);
 }
 
 .feature-title {
@@ -855,7 +1153,8 @@ img {
 
 .testimonial-card:hover {
   border-color: var(--border-gold-hover);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
 }
 
 .stars-row {
@@ -929,7 +1228,8 @@ img {
 
 .info-card:hover {
   border-color: var(--border-gold-hover);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
 }
 
 .info-icon-box {
@@ -942,6 +1242,12 @@ img {
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-icon-box {
+  transform: scale(1.15) rotate(6deg);
+  background: rgba(201, 162, 79, 0.22);
 }
 
 .info-card h3 {
@@ -992,6 +1298,7 @@ img {
 
 .faq-item.active {
   border-color: var(--border-gold-hover);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 .faq-question {
@@ -1018,7 +1325,7 @@ img {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
   padding: 0 26px;
   color: var(--text);
   font-size: 0.94rem;
@@ -1126,12 +1433,17 @@ img {
   box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
   z-index: 1000;
   transition: var(--transition);
+  animation: floatPulse 3s infinite ease-in-out;
+}
+
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0); box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45); }
+  50% { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.65); }
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
   background: var(--whatsapp-hover);
-  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
 }
 
 .whatsapp-float svg {
@@ -1142,7 +1454,10 @@ img {
 
 /* ── RESPONSIVIDADE ── */
 @media (max-width: 992px) {
-  .hero-title { font-size: 2.8rem; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero-text-col { text-align: center; }
+  .hero-description { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
   .hero-trust-bar { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .trust-item:nth-child(2)::after { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1153,7 +1468,7 @@ img {
   .nav-menu, .nav-actions .btn { display: none; }
   .menu-toggle { display: block; }
   .hero { padding: 130px 20px 70px; }
-  .hero-title { font-size: 2.2rem; }
+  .hero-title { font-size: 2.3rem; }
   .hero-description { font-size: 1rem; }
   .hero-trust-bar { grid-template-columns: 1fr; gap: 16px; }
   .trust-item::after { display: none !important; }
