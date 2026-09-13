@@ -16,9 +16,8 @@
   <!-- ESTILOS GLOBAIS EMBUTIDOS (GARANTIA TOTAL DE RESPONSIVIDADE MOBILE) -->
   <style>
 /* ==========================================================================
-   FS CONCEPT HAIR | Barbearia Premium — Identidade Visual Completa & Animações
-   Paleta: Preto Nobre, Dourado Metálico e Tons Creme
-   Tipografia: Cinzel, Cormorant Garamond e Jost
+   FS CONCEPT HAIR | Barbearia Premium — Design System Oficial & Responsivo
+   Preto Nobre (#050505), Dourado Nobre (#c9a24f) e Tons Creme (#f5ede0)
    ========================================================================== */
 
 :root {
@@ -32,23 +31,21 @@
   --gold: #c9a24f;
   --gold-light: #e6c87f;
   --gold-dark: #987832;
-  --gold-glow: rgba(201, 162, 79, 0.22);
+  --gold-glow: rgba(201, 162, 79, 0.2);
   --cream: #f5ede0;
   --white: #ffffff;
   --text: #a4a4b0;
   --text-light: #d6d6e0;
   --text-dim: #737380;
-  --accent: #d97706;
   --whatsapp: #25D366;
   --whatsapp-hover: #1ebd5a;
   --radius: 8px;
   --radius-lg: 14px;
-  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --font-serif: 'Cinzel', serif;
   --font-display: 'Cormorant Garamond', serif;
   --font-sans: 'Jost', sans-serif;
   --shadow-card: 0 14px 40px rgba(0, 0, 0, 0.65);
-  --shadow-gold: 0 6px 30px rgba(201, 162, 79, 0.3);
 }
 
 *, *::before, *::after {
@@ -61,6 +58,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   background-color: var(--black);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -68,7 +66,10 @@ body {
   background-color: var(--black);
   color: var(--text-light);
   line-height: 1.6;
-  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
+  position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -89,60 +90,6 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-}
-
-/* ── ANIMAÇÕES DE SCROLL REVEAL ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.reveal.reveal-left {
-  transform: translateX(-40px);
-}
-
-.reveal.reveal-right {
-  transform: translateX(40px);
-}
-
-.reveal.reveal-scale {
-  transform: scale(0.92);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translate(0) scale(1);
-}
-
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; }
-
-/* ── EFEITO RIPPLE (ONDA AO CLICAR) ── */
-.btn, .filter-btn, .service-card, .faq-question, .info-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-  transform: scale(0);
-  animation: rippleAnimation 0.6s linear;
-  pointer-events: none;
-}
-
-@keyframes rippleAnimation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
 }
 
 /* ── ÍCONES SVG METÁLICOS ── */
@@ -171,7 +118,7 @@ img {
   color: var(--gold);
 }
 
-/* ── BOTÕES PREMIUM COM BRILHO NO HOVER ── */
+/* ── BOTÕES PREMIUM ── */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -187,26 +134,9 @@ img {
   cursor: pointer;
   transition: var(--transition);
   border: 1px solid transparent;
-  white-space: nowrap;
   user-select: none;
-}
-
-/* Efeito de feixe de luz passando no botão ao passar o mouse */
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -130%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transform: skewX(-25deg);
-  transition: none;
-}
-
-.btn:hover::after {
-  left: 140%;
-  transition: left 0.75s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:active {
@@ -376,7 +306,7 @@ img {
   cursor: pointer;
 }
 
-/* Mobile Drawer */
+/* Menu Mobile Gaveta */
 .mobile-nav {
   display: none;
   position: fixed;
@@ -411,10 +341,7 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* ==========================================================================
-   HERO SECTION — ALTO IMPACTO & ESSÊNCIA VISUAL DE BARBEARIA
-   Preservando Fachada e Logo com Elementos Emblemáticos e Animações
-   ========================================================================== */
+/* ── HERO SECTION ── */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -426,7 +353,6 @@ img {
   background: #050505;
 }
 
-/* Fachada preservada no fundo com blend mode dark luxury */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -448,7 +374,7 @@ img {
 }
 
 .hero:hover .hero-bg {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .hero-overlay {
@@ -464,8 +390,9 @@ img {
   top: 15%;
   left: 50%;
   transform: translateX(-50%);
-  width: 650px;
-  height: 450px;
+  width: 100%;
+  max-width: 650px;
+  height: 400px;
   background: radial-gradient(circle, rgba(201, 162, 79, 0.22) 0%, transparent 70%);
   filter: blur(90px);
   z-index: 2;
@@ -480,7 +407,6 @@ img {
   margin: 0 auto;
 }
 
-/* Grid de duas colunas: Informação & Vitrine da Barbearia */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -488,12 +414,10 @@ img {
   align-items: center;
 }
 
-/* Coluna Esquerda */
 .hero-text-col {
   text-align: left;
 }
 
-/* Emblema Heráldico de Barbearia no Topo */
 .barber-crest-badge {
   display: inline-flex;
   align-items: center;
@@ -507,7 +431,7 @@ img {
   text-transform: uppercase;
   color: var(--gold-light);
   margin-bottom: 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), inset 0 0 12px rgba(201, 162, 79, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 }
 
 .hero-title {
@@ -518,7 +442,6 @@ img {
   color: var(--cream);
   margin-bottom: 22px;
   letter-spacing: 1px;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
 }
 
 .hero-description {
@@ -537,19 +460,6 @@ img {
   margin-bottom: 28px;
 }
 
-.hero-btn-primary {
-  padding: 16px 36px;
-  font-size: 0.9rem;
-  letter-spacing: 2.5px;
-}
-
-.hero-btn-outline {
-  padding: 16px 30px;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-}
-
-/* Indicador de Disponibilidade ao Vivo */
 .live-status {
   display: inline-flex;
   align-items: center;
@@ -574,7 +484,6 @@ img {
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* Coluna Direita: Vitrine Visual da Barbearia */
 .hero-showcase-col {
   display: flex;
   justify-content: center;
@@ -588,8 +497,7 @@ img {
   border-radius: var(--radius-lg);
   padding: 34px 28px;
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
   position: relative;
   transition: var(--transition);
 }
@@ -603,7 +511,6 @@ img {
 .showcase-header {
   text-align: center;
   margin-bottom: 20px;
-  position: relative;
 }
 
 .barber-tools-emblem {
@@ -617,11 +524,6 @@ img {
   justify-content: center;
   margin: 0 auto 12px;
   box-shadow: 0 0 20px rgba(201, 162, 79, 0.25);
-  transition: transform 0.4s ease;
-}
-
-.barber-showcase-card:hover .barber-tools-emblem {
-  transform: scale(1.1) rotate(8deg);
 }
 
 .showcase-title {
@@ -639,7 +541,6 @@ img {
   margin-top: 2px;
 }
 
-/* Faixa Animada com Padrão de Barbearia */
 .barber-pole-strip {
   width: 100%;
   height: 3px;
@@ -717,12 +618,13 @@ img {
 
 .showcase-cta {
   width: 100%;
-  padding: 13px;
+  padding: 13px 16px;
   font-size: 0.82rem;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.5px;
+  text-align: center;
 }
 
-/* ── TRUST BAR / PAINEL DE PILARES INFERIOR DO HERO ── */
+/* ── TRUST BAR ── */
 .hero-trust-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -732,8 +634,7 @@ img {
   border-radius: var(--radius-lg);
   padding: 22px 20px;
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
   margin-top: 50px;
 }
 
@@ -744,7 +645,7 @@ img {
   text-align: center;
   padding: 6px 12px;
   position: relative;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .trust-item:hover {
@@ -771,7 +672,7 @@ img {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .trust-item:hover .trust-icon-box {
@@ -794,7 +695,13 @@ img {
   letter-spacing: 0.8px;
 }
 
-/* ── SEÇÃO TITULOS PADRÃO ── */
+/* ── SEÇÃO DE SERVIÇOS ── */
+.services-section {
+  padding: 110px 0;
+  background-color: var(--bg-dark);
+  position: relative;
+}
+
 .section-header {
   text-align: center;
   max-width: 720px;
@@ -831,15 +738,6 @@ img {
 .section-subtitle {
   font-size: 1rem;
   color: var(--text);
-}
-
-/* ==========================================================================
-   SEÇÃO DE SERVIÇOS / CARDÁPIO — SEM EMOJIS & COM HOVER VIVO
-   ========================================================================== */
-.services-section {
-  padding: 110px 0;
-  background-color: var(--bg-dark);
-  position: relative;
 }
 
 .services-filter {
@@ -923,12 +821,6 @@ img {
   padding: 4px 12px;
   border-radius: 50px;
   box-shadow: 0 2px 10px rgba(201, 162, 79, 0.35);
-  animation: badgePulse 3s infinite ease-in-out;
-}
-
-@keyframes badgePulse {
-  0%, 100% { box-shadow: 0 2px 10px rgba(201, 162, 79, 0.35); }
-  50% { box-shadow: 0 4px 18px rgba(201, 162, 79, 0.6); }
 }
 
 .service-category-tag {
@@ -964,12 +856,11 @@ img {
   font-weight: 700;
   white-space: nowrap;
   text-shadow: 0 2px 12px rgba(201, 162, 79, 0.25);
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .service-card:hover .service-price {
   transform: scale(1.06);
-  text-shadow: 0 0 16px rgba(201, 162, 79, 0.6);
 }
 
 .service-meta {
@@ -1077,6 +968,7 @@ img {
   color: var(--text);
   text-transform: uppercase;
   margin-top: 2px;
+  white-space: nowrap;
 }
 
 .about-text h2 {
@@ -1145,7 +1037,7 @@ img {
   color: var(--text);
 }
 
-/* ── DEPOIMENTOS DE CLIENTES ── */
+/* ── DEPOIMENTOS ── */
 .testimonials-section {
   padding: 110px 0;
   background: var(--bg-dark);
@@ -1222,7 +1114,7 @@ img {
   color: var(--text-dim);
 }
 
-/* ── LOCALIZAÇÃO & HORÁRIOS ── */
+/* ── LOCALIZAÇÃO ── */
 .location-section {
   padding: 110px 0;
   background: var(--black);
@@ -1259,12 +1151,6 @@ img {
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  transition: transform 0.3s ease;
-}
-
-.info-card:hover .info-icon-box {
-  transform: scale(1.15) rotate(6deg);
-  background: rgba(201, 162, 79, 0.22);
 }
 
 .info-card h3 {
@@ -1291,7 +1177,7 @@ img {
   border-bottom: none;
 }
 
-/* ── FAQ ACCORDION ── */
+/* ── FAQ ACCORDION (100% VISÍVEL E ANIMADO AO ATIVAR) ── */
 .faq-section {
   padding: 110px 0;
   background: var(--bg-dark);
@@ -1310,7 +1196,7 @@ img {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: var(--transition);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .faq-item.active {
@@ -1328,11 +1214,21 @@ img {
   font-size: 1.05rem;
   color: var(--cream);
   user-select: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.faq-question:hover {
+  background: rgba(201, 162, 79, 0.05);
 }
 
 .faq-icon-arrow {
   color: var(--gold);
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
 }
 
 .faq-item.active .faq-icon-arrow {
@@ -1340,18 +1236,15 @@ img {
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-  padding: 0 26px;
+  display: none;
+  padding: 0 26px 22px;
   color: var(--text);
   font-size: 0.94rem;
   line-height: 1.65;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 500px;
-  padding-bottom: 22px;
+  display: block;
 }
 
 /* ── CTA BANNER ── */
@@ -1450,16 +1343,10 @@ img {
   box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
   z-index: 1000;
   transition: var(--transition);
-  animation: floatPulse 3s infinite ease-in-out;
-}
-
-@keyframes floatPulse {
-  0%, 100% { transform: translateY(0); box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45); }
-  50% { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.65); }
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1) !important;
+  transform: scale(1.1);
   background: var(--whatsapp-hover);
 }
 
@@ -1469,48 +1356,10 @@ img {
   fill: currentColor;
 }
 
-/* ── RESPONSIVIDADE ── */
-
 /* ==========================================================================
-   AJUSTES ESPECÍFICOS DE RESPONSIVIDADE E ORDEM MOBILE (SMARTPHONES E TABLETS)
+   REGRAS DE ADAPTAÇÃO MOBILE BULLETPROOF (TABLETS E SMARTPHONES)
    ========================================================================== */
-
-/* Prevenção rigorosa de scroll horizontal e quebra de layout no mobile */
-html, body {
-  max-width: 100%;
-  overflow-x: hidden !important;
-}
-
-/* ==========================================================================
-   RESPONSIVIDADE E ORDENAÇÃO MOBILE BULLETPROOF (100% OTIMIZADO)
-   Garante ordem lógica de leitura, zero overflow lateral e proporções perfeitas
-   ========================================================================== */
-
-html, body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden !important;
-  position: relative;
-}
-
-/* Em telas de tablet e celular: */
 @media (max-width: 992px) {
-  /* HERO IMEDIATAMENTE VISÍVEL: Sem delay ou deslocamento que cause tela torta */
-  .hero .reveal,
-  .hero .reveal-left,
-  .hero .reveal-right,
-  .hero .reveal-scale {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  .reveal.reveal-left,
-  .reveal.reveal-right {
-    transform: translateY(20px) !important;
-  }
-
-  /* Grid do Hero em Coluna Única */
   .hero-grid {
     display: flex;
     flex-direction: column;
@@ -1530,9 +1379,12 @@ html, body {
     margin-right: auto;
   }
 
-  /* ORDEM RIGOROSA NA SEÇÃO SOBRE:
-     1. Texto institucional e pilares primeiro (order: 1)
-     2. Card preto de estatísticas e monograma depois (order: 2) */
+  .hero-actions {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Ordem Lógica na Seção Sobre */
   .about-grid {
     display: flex;
     flex-direction: column;
@@ -1544,6 +1396,10 @@ html, body {
     text-align: center;
   }
 
+  .about-features {
+    text-align: left;
+  }
+
   .about-experience-box {
     order: 2 !important;
     width: 100%;
@@ -1551,24 +1407,30 @@ html, body {
     margin: 0 auto;
   }
 
-  .about-features {
-    text-align: left;
+  .hero-trust-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 18px 14px;
+  }
+
+  .trust-item:nth-child(2)::after {
+    display: none;
   }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: 32px;
   }
 }
 
-/* Em smartphones (≤ 768px): */
 @media (max-width: 768px) {
   .container {
     padding: 0 16px;
+    width: 100%;
     max-width: 100%;
   }
 
-  /* ── CABEÇALHO MOBILE ── */
+  /* Header Mobile */
   .nav {
     padding: 12px 0;
   }
@@ -1608,8 +1470,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     padding: 0;
     flex-shrink: 0;
   }
@@ -1617,26 +1479,26 @@ html, body {
   .mobile-nav {
     top: 64px;
     padding: 18px 16px 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.95);
   }
 
   .mobile-nav a {
-    padding: 11px 0;
-    font-size: 0.92rem;
+    padding: 12px 0;
+    font-size: 0.95rem;
   }
 
-  /* ── HERO MOBILE ── */
+  /* Hero Mobile */
   .hero {
-    padding: 100px 16px 50px;
+    padding: 95px 16px 45px;
     min-height: auto;
   }
 
   .barber-crest-badge {
     font-size: 0.65rem;
     letter-spacing: 1.5px;
-    padding: 5px 12px;
+    padding: 6px 12px;
     margin-bottom: 16px;
     text-align: center;
+    max-width: 100%;
   }
 
   .hero-title {
@@ -1651,7 +1513,6 @@ html, body {
     margin-bottom: 22px;
   }
 
-  /* Botões em Coluna Perfeita 100% */
   .hero-actions {
     display: flex;
     flex-direction: column;
@@ -1665,13 +1526,12 @@ html, body {
     padding: 14px 18px;
     font-size: 0.82rem;
     letter-spacing: 1.5px;
-    justify-content: center;
   }
 
   .live-status {
     font-size: 0.74rem;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   /* Vitrine da Barbearia no Mobile */
@@ -1702,16 +1562,6 @@ html, body {
     gap: 10px;
   }
 
-  .showcase-icon-box {
-    width: 32px;
-    height: 32px;
-  }
-
-  .showcase-icon-box svg {
-    width: 15px;
-    height: 15px;
-  }
-
   .showcase-text strong {
     font-size: 0.85rem;
   }
@@ -1721,19 +1571,18 @@ html, body {
   }
 
   .showcase-cta {
+    width: 100%;
     padding: 13px 16px;
     font-size: 0.8rem;
-    white-space: normal !important;
-    text-align: center;
   }
 
-  /* Trust Bar em Grid 2x2 Compacto */
+  /* Trust Bar em Grid 2x2 no Mobile */
   .hero-trust-bar {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 14px 10px;
-    margin-top: 28px;
+    margin-top: 26px;
     width: 100%;
   }
 
@@ -1746,8 +1595,8 @@ html, body {
   }
 
   .trust-icon-box {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
     margin-bottom: 6px;
   }
 
@@ -1757,20 +1606,20 @@ html, body {
   }
 
   .trust-title {
-    font-size: 0.85rem;
+    font-size: 0.86rem;
   }
 
   .trust-desc {
     font-size: 0.68rem;
   }
 
-  /* ── SEÇÃO SERVIÇOS MOBILE ── */
+  /* Seção de Serviços */
   .services-section {
     padding: 60px 0;
   }
 
   .section-header {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
   }
 
   .section-tag {
@@ -1787,14 +1636,13 @@ html, body {
     font-size: 0.88rem;
   }
 
-  /* Carrossel Horizontal de Filtros */
   .services-filter {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     justify-content: flex-start;
     padding: 4px 16px 12px;
-    margin: 0 -16px 24px;
+    margin: 0 -16px 22px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -1852,14 +1700,14 @@ html, body {
     font-size: 0.8rem;
   }
 
-  /* ── SEÇÃO SOBRE MOBILE ── */
+  /* Seção Sobre no Mobile */
   .about-section {
     padding: 60px 0;
   }
 
   .about-text h2 {
     font-size: 1.8rem;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .about-text p {
@@ -1877,7 +1725,7 @@ html, body {
   }
 
   .about-experience-box {
-    padding: 28px 16px;
+    padding: 26px 16px;
   }
 
   .about-monogram {
@@ -1890,19 +1738,19 @@ html, body {
   }
 
   .about-box-stats {
-    gap: 10px;
+    gap: 8px;
     padding-top: 18px;
   }
 
   .stat-num {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 
   .stat-label {
     font-size: 0.65rem;
   }
 
-  /* ── DEPOIMENTOS MOBILE ── */
+  /* Depoimentos */
   .testimonials-section {
     padding: 60px 0;
   }
@@ -1921,7 +1769,7 @@ html, body {
     margin-bottom: 16px;
   }
 
-  /* ── LOCALIZAÇÃO MOBILE ── */
+  /* Localização */
   .location-section {
     padding: 60px 0;
   }
@@ -1932,14 +1780,14 @@ html, body {
   }
 
   .info-card {
-    padding: 26px 18px;
+    padding: 24px 16px;
   }
 
   .info-card h3 {
     font-size: 1.18rem;
   }
 
-  /* ── FAQ MOBILE ── */
+  /* FAQ Accordion no Mobile */
   .faq-section {
     padding: 60px 0;
   }
@@ -1947,24 +1795,22 @@ html, body {
   .faq-question {
     padding: 18px 16px;
     font-size: 0.92rem;
+    line-height: 1.35;
   }
 
   .faq-answer {
-    padding: 0 16px;
+    padding: 0 16px 18px;
     font-size: 0.86rem;
+    line-height: 1.55;
   }
 
-  .faq-item.active .faq-answer {
-    padding-bottom: 18px;
-  }
-
-  /* ── CTA BANNER MOBILE ── */
+  /* CTA Banner */
   .cta-banner {
     padding: 60px 16px;
   }
 
   .cta-banner h2 {
-    font-size: 2rem;
+    font-size: 1.95rem;
     margin-bottom: 12px;
   }
 
@@ -1979,7 +1825,7 @@ html, body {
     font-size: 0.85rem;
   }
 
-  /* ── RODAPÉ MOBILE ── */
+  /* Rodapé */
   .footer {
     padding: 48px 0 20px;
   }
@@ -1991,9 +1837,7 @@ html, body {
   }
 
   .footer-brand p {
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0.84rem;
+    margin: 12px auto 0;
   }
 
   .brand-logo {
@@ -2007,7 +1851,7 @@ html, body {
     font-size: 0.74rem;
   }
 
-  /* ── WHATSAPP FLUTUANTE MOBILE ── */
+  /* WhatsApp Flutuante */
   .whatsapp-float {
     bottom: 18px;
     right: 18px;
@@ -2023,24 +1867,16 @@ html, body {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.9rem;
+    font-size: 1.85rem;
   }
 
-  .hero-trust-bar {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  .trust-title {
-    font-size: 0.82rem;
-  }
-
-  .trust-desc {
-    font-size: 0.65rem;
+  .barber-crest-badge {
+    font-size: 0.6rem;
+    padding: 4px 10px;
   }
 }
 
-  </style>
+</style>
 </head>
 <body>
 
@@ -2239,174 +2075,167 @@ html, body {
     </svg>
   </a>
 
-  <script src="script.js"></script>
+  
 
   <!-- SCRIPTS DE INTERAÇÃO E ANIMAÇÃO EMBUTIDOS -->
   <script>
 /* ==========================================================================
-   FS CONCEPT HAIR | Barbearia Premium — Motor de Animações & Interações
+   FS CONCEPT HAIR | Barbearia Premium — Scripts Interativos & Robustos
+   - Acordeão do FAQ 100% funcional (com alternância direta e animação suave)
+   - Menu Mobile responsivo
+   - Contadores numéricos
+   - Filtros de serviços
+   - Header com blur ao rolar
    ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
+// ── FUNÇÃO GLOBAL DO FAQ (FUNCIONA 100% VIA ONCLICK OU LISTENER) ──
+function toggleFaq(element) {
+  const item = element.closest('.faq-item');
+  if (!item) return;
 
-  // ── 1. SCROLL REVEAL COM INTERSECTION OBSERVER ──
-  const revealElements = document.querySelectorAll('.reveal');
+  const isActive = item.classList.contains('active');
   
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+  // Fecha todos os outros itens para manter limpo
+  document.querySelectorAll('.faq-item').forEach(other => {
+    other.classList.remove('active');
+  });
+
+  // Alterna o item clicado
+  if (!isActive) {
+    item.classList.add('active');
+  }
+}
+
+// ── FUNÇÃO GLOBAL DO MENU MOBILE ──
+function toggleMobileMenu() {
+  const mobileNav = document.getElementById('mobileNav');
+  const menuToggle = document.getElementById('menuToggle');
+  if (mobileNav) {
+    mobileNav.classList.toggle('active');
+    const isOpen = mobileNav.classList.contains('active');
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    }
+  }
+}
+
+function closeMobileMenu() {
+  const mobileNav = document.getElementById('mobileNav');
+  const menuToggle = document.getElementById('menuToggle');
+  if (mobileNav) {
+    mobileNav.classList.remove('active');
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', false);
+    }
+  }
+}
+
+// ── FUNÇÃO GLOBAL DE FILTRO DE SERVIÇOS ──
+function filterServicesCategory(btnElement, category) {
+  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+  btnElement.classList.add('active');
+
+  document.querySelectorAll('.service-card').forEach(card => {
+    if (category === 'all' || card.getAttribute('data-category') === category) {
+      card.style.display = 'flex';
+      card.classList.add('is-visible');
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// ── INICIALIZAÇÃO SEGURA (COMPATÍVEL COM QUALQUER AMBIENTE) ──
+function initBarbershopApp() {
+
+  // 1. Header com Blur ao Rolar
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 25) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
+
+  // 2. Fechar Menu Mobile ao clicar em links
+  const mobileNav = document.getElementById('mobileNav');
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
+
+  // 3. Scroll Reveal e Contadores com IntersectionObserver
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && window.innerWidth > 768) {
+    const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
           
-          // Anima TODOS os contadores dentro do bloco revelado
-          const counters = entry.target.querySelectorAll('.count-up');
-          counters.forEach(counter => {
-            if (!counter.dataset.animated) {
-              animateCounter(counter);
-            }
+          // Anima contadores se existirem
+          entry.target.querySelectorAll('.count-up').forEach(c => {
+            if (!c.dataset.animated) animateCounter(c);
           });
           
-          observer.unobserve(entry.target);
+          obs.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -30px 0px'
-    });
+    }, { threshold: 0.1 });
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(el => observer.observe(el));
   } else {
+    // No celular ou se não houver suporte, deixa tudo visível imediatamente
     revealElements.forEach(el => el.classList.add('is-visible'));
   }
 
-  // ── 2. CONTADOR ANIMADO ──
+  // Anima contadores de imediato caso já estejam visíveis
+  document.querySelectorAll('.count-up').forEach(c => {
+    if (!c.dataset.animated) animateCounter(c);
+  });
+
+  // 4. Função de Contador Numérico
   function animateCounter(el) {
     el.dataset.animated = "true";
     const target = parseFloat(el.getAttribute('data-target'));
     const isDecimal = el.getAttribute('data-decimal') === "true";
     const suffix = el.getAttribute('data-suffix') || '';
     const prefix = el.getAttribute('data-prefix') || '';
-    const duration = 1600; // ms
+    const duration = 1400;
     const startTime = performance.now();
 
-    function updateCount(currentTime) {
-      const elapsed = currentTime - startTime;
+    function update(now) {
+      const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const currentVal = easeProgress * target;
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const current = ease * target;
 
       if (isDecimal) {
-        el.textContent = prefix + currentVal.toFixed(1) + suffix;
+        el.textContent = prefix + current.toFixed(1) + suffix;
       } else {
-        el.textContent = prefix + Math.floor(currentVal).toLocaleString('pt-BR') + suffix;
+        el.textContent = prefix + Math.floor(current).toLocaleString('pt-BR') + suffix;
       }
 
       if (progress < 1) {
-        requestAnimationFrame(updateCount);
+        requestAnimationFrame(update);
       } else {
-        if (isDecimal) {
-          el.textContent = prefix + target.toFixed(1) + suffix;
-        } else {
-          el.textContent = prefix + target.toLocaleString('pt-BR') + suffix;
-        }
+        el.textContent = isDecimal ? prefix + target.toFixed(1) + suffix : prefix + target.toLocaleString('pt-BR') + suffix;
       }
     }
-
-    requestAnimationFrame(updateCount);
+    requestAnimationFrame(update);
   }
+}
 
-  // ── 3. EFEITO RIPPLE AO CLICAR ──
-  const rippleElements = document.querySelectorAll('.btn, .filter-btn, .service-card, .faq-question, .info-card');
-  rippleElements.forEach(el => {
-    el.addEventListener('click', function(e) {
-      const rect = this.getBoundingClientRect();
-      const circle = document.createElement('span');
-      const diameter = Math.max(rect.width, rect.height);
-      const radius = diameter / 2;
+// Executa assim que o script carregar
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initBarbershopApp);
+} else {
+  initBarbershopApp();
+}
 
-      circle.style.width = circle.style.height = `${diameter}px`;
-      circle.style.left = `${e.clientX - rect.left - radius}px`;
-      circle.style.top = `${e.clientY - rect.top - radius}px`;
-      circle.classList.add('ripple');
-
-      const existingRipple = this.querySelector('.ripple');
-      if (existingRipple) {
-        existingRipple.remove();
-      }
-
-      this.appendChild(circle);
-      setTimeout(() => circle.remove(), 600);
-    });
-  });
-
-  // ── 4. HEADER COM BLUR AO ROLAR ──
-  const nav = document.querySelector('.nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-
-  // ── 5. MENU MOBILE ──
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-
-  if (menuToggle && mobileNav) {
-    menuToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('active');
-      const isOpen = mobileNav.classList.contains('active');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', false);
-      });
-    });
-  }
-
-  // ── 6. FAQ ACCORDION ──
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    if (question) {
-      question.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        faqItems.forEach(otherItem => otherItem.classList.remove('active'));
-        if (!isActive) {
-          item.classList.add('active');
-        }
-      });
-    }
-  });
-
-  // ── 7. FILTRO DE SERVIÇOS ──
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const serviceCards = document.querySelectorAll('.service-card');
-
-  if (filterBtns.length > 0 && serviceCards.length > 0) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const category = btn.getAttribute('data-filter');
-        serviceCards.forEach(card => {
-          if (category === 'all' || card.getAttribute('data-category') === category) {
-            card.style.display = 'flex';
-            card.classList.add('is-visible');
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
-});
-
-  </script>
+</script>
 </body>
 </html>
